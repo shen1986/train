@@ -6,7 +6,8 @@
 
 ### MPA 配置步骤
 - 先执行 npm eject 把 react-scripts 分解后 生成一个config 文件
-- 
+- 其中 paths.js 中配置 所有项目路径相关的情报
+
 
 ## react hooks
 - 这个趋势看来势不可挡， 很多第三方的库都变成hooks了比如antd，如果不跟着改，很难跟上时代。
@@ -30,6 +31,7 @@
 ## PWA
 - 在react生成的文件里面有一个serviceWorker 文件它就是已经写好的PWA
     + 它可以缓存数据，达到，离线应用的能力，但是它只适用于https所有占时还用不到
+    + 但是它提供了一种解决方案，在关闭浏览器的同时，还能持续工作，你可以给他推送消息。
 
 ## eject
 - 在create-react-app 之后 有一个 eject命令，这个命令会把react-scripts 这个包分解导入到项目中去，如果项目的构建很复杂不能够满足自己的需求（比如MPA），可以考虑eject但是这个命令无法回滚，执行前清先保存代码。
