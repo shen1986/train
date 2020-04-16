@@ -1,44 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 项目学习笔记
 
-## Available Scripts
+## MPA（Multi-page application）
+- 多页应用，做了很多的单页应用，尤其是用react的时候，
+但是当一个SPA，太大太重的时候，配置webpack，利用多页应用，分散逻辑是一个不错的选择
 
-In the project directory, you can run:
+### MPA 配置步骤
+- 先执行 npm eject 把 react-scripts 分解后 生成一个config 文件
+- 
 
-### `yarn start`
+## react hooks
+- 这个趋势看来势不可挡， 很多第三方的库都变成hooks了比如antd，如果不跟着改，很难跟上时代。
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### hook规则
+- https://zh-hans.reactjs.org/docs/hooks-rules.html
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### 自定义Hook
+- https://zh-hans.reactjs.org/docs/hooks-custom.html
 
-### `yarn test`
+### hook Api 索引
+- https://zh-hans.reactjs.org/docs/hooks-reference.html
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## memo
+- 一个组件如果只用到props 或者 没有依赖外部变量，可以利用memo 来改善描画。
 
-### `yarn build`
+- React.memo 为高阶组件。它与 React.PureComponent 非常相似，但只适用于函数组件，而不适用 class 组件。
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 如果你的函数组件在给定相同 props 的情况下渲染相同的结果，那么你可以通过将其包装在 React.memo 中调用，以此通过记忆组件渲染结果的方式来提高组件的性能表现。这意味着在这种情况下，React 将跳过渲染组件的操作并直接复用最近一次渲染的结果。
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## PWA
+- 在react生成的文件里面有一个serviceWorker 文件它就是已经写好的PWA
+    + 它可以缓存数据，达到，离线应用的能力，但是它只适用于https所有占时还用不到
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## eject
+- 在create-react-app 之后 有一个 eject命令，这个命令会把react-scripts 这个包分解导入到项目中去，如果项目的构建很复杂不能够满足自己的需求（比如MPA），可以考虑eject但是这个命令无法回滚，执行前清先保存代码。
